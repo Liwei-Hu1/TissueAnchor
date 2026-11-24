@@ -1,0 +1,10 @@
+{
+  "steps": 3000,
+  "rays": 512,
+  "samples": 48,
+  "seed": 42,
+  "val_every": 500,
+  "checkpoint_every": 250,
+  "depth_weight": 0.01,
+  "lr": 0.0005
+}

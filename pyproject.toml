@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tissueanchor"
+version = "0.1.0"
+description = "Reusable dynamic tissue reconstruction from stereo endoscopic video"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.8,<2.9",
+    "torchvision>=0.23,<0.24",
+    "numpy>=2,<2.3",
+    "Pillow>=11",
+    "PyYAML>=6",
+    "tifffile>=2024.8.30",
+    "opencv-python-headless>=4.10",
+    "scipy>=1.13",
+    "einops>=0.8",
+    "lpips==0.1.4",
+    "tqdm>=4.66",
+]
+
+[project.scripts]
+tissueanchor-cache = "tissueanchor.engines.cache:main"
+tissueanchor-train = "tissueanchor.engines.train:main"
+tissueanchor-infer = "tissueanchor.engines.infer:main"
+tissueanchor-evaluate = "tissueanchor.engines.evaluate:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
